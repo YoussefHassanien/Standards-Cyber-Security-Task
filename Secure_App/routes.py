@@ -8,6 +8,8 @@ from wtforms import StringField, DecimalField, SubmitField, PasswordField
 from wtforms.validators import DataRequired, NumberRange, EqualTo
 from flask_wtf.csrf import CSRFProtect
 from flask_wtf.csrf import validate_csrf, CSRFError
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 class TransferForm(FlaskForm):
     recipient = StringField('Recipient', validators=[DataRequired()])
@@ -41,6 +43,19 @@ def get_user_from_db(username):
     user = cursor.fetchone()
     conn.close()
     return user
+
+limiter = Limiter(
+    get_remote_address,  # Use the client's IP address
+    app=app,
+)
+
+@app.errorhandler(429)
+def ratelimit_handler(e):
+    if request.endpoint == 'login':
+        return render_template('login.html', form=LoginForm(), error_message=True), 429
+    elif request.endpoint == 'register':
+        return render_template('register.html', form=RegisterForm(), error_message=True), 429
+    return 'Rate limit exceeded', 429
 
 @app.route('/')
 def home():
@@ -94,6 +109,7 @@ def transfer():
 
 
 @app.route('/login', methods=['GET', 'POST'])
+@limiter.limit("5 per minute")
 def login():
     form = LoginForm()
 
@@ -121,6 +137,7 @@ def login():
     return render_template('login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
+@limiter.limit("5 per minute")
 def register():
     form = RegisterForm()
 
