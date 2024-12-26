@@ -12,11 +12,14 @@ from flask_wtf.csrf import validate_csrf, CSRFError
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import logging
+from cryptography.fernet import Fernet
 
 logging.basicConfig(
     filename='app.log',  # Log file
     format='%(asctime)s - %(levelname)s - %(message)s',  # Log message format
 )
+key = Fernet.generate_key()
+cipher_suite = Fernet(key)
 
 class TransferForm(FlaskForm):
     recipient = StringField('Recipient', validators=[DataRequired()])
@@ -113,6 +116,9 @@ def comment():
     form = CommentForm()  # Instantiate the form object
     comments = []
 
+    if request.method == 'GET':
+        return render_template('comments.html', comments=comments, form=form)
+
     if form.validate_on_submit():  # Checks for POST request and validates the form
         user_comment = form.comment.data  # Get the comment from the form
 
@@ -150,9 +156,13 @@ def transfer():
             recipient = form.recipient.data
             amount = form.amount.data
 
+            # Encrypt the recipient and amount
+            encrypted_recipient = cipher_suite.encrypt(recipient.encode())
+            encrypted_amount = cipher_suite.encrypt(str(amount).encode())
+
             # Log the transaction securely
             with open('transactions.txt', 'a') as f:
-                f.write(f"Transfer to: {recipient}, Amount: {amount}\n")
+                f.write(f"Transfer to: {encrypted_recipient.decode()}, Amount: {encrypted_amount.decode()}\n")
 
             success = True
             return redirect(url_for('transfer'))
@@ -232,4 +242,4 @@ def register():
         
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
