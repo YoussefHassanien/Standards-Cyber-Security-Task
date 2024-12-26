@@ -1,0 +1,42 @@
+2024-12-26 16:48:24,706 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 16:48:24,706 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-26 16:48:24,708 - INFO -  * Restarting with stat
+2024-12-26 16:48:25,074 - WARNING -  * Debugger is active!
+2024-12-26 16:48:25,074 - INFO -  * Debugger PIN: 337-206-783
+2024-12-26 16:48:30,156 - INFO - 127.0.0.1 - - [26/Dec/2024 16:48:30] "POST /comment HTTP/1.1" 200 -
+2024-12-26 16:48:43,706 - INFO - 127.0.0.1 - - [26/Dec/2024 16:48:43] "[33mGET /transfere HTTP/1.1[0m" 404 -
+2024-12-26 16:48:51,032 - INFO - 127.0.0.1 - - [26/Dec/2024 16:48:51] "[35m[1mGET /transfer HTTP/1.1[0m" 500 -
+2024-12-26 16:48:51,168 - INFO - 127.0.0.1 - - [26/Dec/2024 16:48:51] "GET /transfer?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-12-26 16:48:51,170 - INFO - 127.0.0.1 - - [26/Dec/2024 16:48:51] "GET /transfer?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-12-26 16:48:51,200 - INFO - 127.0.0.1 - - [26/Dec/2024 16:48:51] "GET /transfer?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-12-26 16:48:51,217 - INFO - 127.0.0.1 - - [26/Dec/2024 16:48:51] "[36mGET /transfer?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-26 16:49:19,332 - INFO - 127.0.0.1 - - [26/Dec/2024 16:49:19] "[35m[1mGET /transfer HTTP/1.1[0m" 500 -
+2024-12-26 16:49:19,347 - INFO - 127.0.0.1 - - [26/Dec/2024 16:49:19] "[36mGET /transfer?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-26 16:49:19,347 - INFO - 127.0.0.1 - - [26/Dec/2024 16:49:19] "[36mGET /transfer?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-26 16:49:19,358 - INFO - 127.0.0.1 - - [26/Dec/2024 16:49:19] "[36mGET /transfer?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-26 16:49:19,383 - INFO - 127.0.0.1 - - [26/Dec/2024 16:49:19] "[36mGET /transfer?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-26 16:49:39,295 - INFO - 127.0.0.1 - - [26/Dec/2024 16:49:39] "GET /transfer HTTP/1.1" 200 -
+2024-12-26 16:50:25,440 - INFO - 127.0.0.1 - - [26/Dec/2024 16:50:25] "GET /transfer HTTP/1.1" 200 -
+2024-12-26 16:50:26,242 - INFO - 127.0.0.1 - - [26/Dec/2024 16:50:26] "GET /transfer HTTP/1.1" 200 -
+2024-12-26 16:50:27,033 - INFO - 127.0.0.1 - - [26/Dec/2024 16:50:27] "GET /transfer HTTP/1.1" 200 -
+2024-12-26 16:51:20,265 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-26 16:51:20,266 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-26 16:51:20,267 - INFO -  * Restarting with stat
+2024-12-26 16:51:20,648 - WARNING -  * Debugger is active!
+2024-12-26 16:51:20,648 - INFO -  * Debugger PIN: 337-206-783
+2024-12-26 16:51:26,838 - INFO - 127.0.0.1 - - [26/Dec/2024 16:51:26] "GET /transfer HTTP/1.1" 200 -
+2024-12-26 16:51:41,914 - INFO - 127.0.0.1 - - [26/Dec/2024 16:51:41] "GET / HTTP/1.1" 200 -
+2024-12-26 16:51:50,394 - INFO - 127.0.0.1 - - [26/Dec/2024 16:51:50] "GET /transfer HTTP/1.1" 200 -
+2024-12-26 16:53:24,139 - INFO -  * Detected change in 'D:\\Education\\Medical Standards & Accreditations\\Tasks\\Tutorial Task 3\\Standards-Cyber-Security-Task\\Secure_App\\routes.py', reloading
+2024-12-26 16:53:24,170 - INFO -  * Restarting with stat
+2024-12-26 16:53:24,569 - WARNING -  * Debugger is active!
+2024-12-26 16:53:24,576 - INFO -  * Debugger PIN: 337-206-783
+2024-12-26 16:53:28,373 - INFO - 127.0.0.1 - - [26/Dec/2024 16:53:28] "GET /transfer HTTP/1.1" 200 -
+2024-12-26 16:53:35,127 - INFO - 127.0.0.1 - - [26/Dec/2024 16:53:35] "[32mPOST /transfer HTTP/1.1[0m" 302 -
+2024-12-26 16:53:35,132 - INFO - 127.0.0.1 - - [26/Dec/2024 16:53:35] "GET /transfer HTTP/1.1" 200 -
+2024-12-26 16:53:39,591 - INFO - 127.0.0.1 - - [26/Dec/2024 16:53:39] "[32mPOST /transfer HTTP/1.1[0m" 302 -
+2024-12-26 16:53:39,595 - INFO - 127.0.0.1 - - [26/Dec/2024 16:53:39] "GET /transfer HTTP/1.1" 200 -
+2024-12-26 16:53:43,597 - WARNING - Too many transfer attempts for 127.0.0.1
+2024-12-26 16:53:43,598 - INFO - 127.0.0.1 - - [26/Dec/2024 16:53:43] "[31m[1mPOST /transfer HTTP/1.1[0m" 429 -

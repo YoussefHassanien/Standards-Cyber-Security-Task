@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Comments Page</title>
-</head>
-<body>
+  </head>
+  <body>
+    <p id="error_message" style="display: none; color: red">
+      Too many attempts to comment, please try again later.
+    </p>
+    {% if error_message %}
+    <script>
+      document.getElementById("error_message").style.display = "block";
+    </script>
+    {% endif %}
     <h1>Leave a Comment</h1>
     <form method="POST" action="/comment">
-        {{ form.hidden_tag() }}  <!-- CSRF token -->
+      {{ form.hidden_tag() }}
+      <!-- CSRF token -->
 
-        <textarea name="comment" rows="5" cols="40" placeholder="Write a comment..."></textarea>
-        <br>
-        <input type="submit" value="Post Comment">
+      <textarea
+        name="comment"
+        rows="5"
+        cols="40"
+        placeholder="Write a comment..."
+      ></textarea>
+      <br />
+      <input type="submit" value="Post Comment" />
     </form>
 
     <h2>All Comments</h2>
     <ul>
-        {% for comment in comments %}
-            <li>{{ comment|safe }}</li> <!-- Intentionally unsafe rendering -->
-        {% endfor %}
+      {% for comment in comments %}
+      <li>{{ comment|safe }}</li>
+      <!-- Intentionally unsafe rendering -->
+      {% endfor %}
     </ul>
-</body>
+  </body>
 </html>
